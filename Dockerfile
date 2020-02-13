@@ -4,3 +4,5 @@ USER root
 
 RUN apk add ruby-dev make gcc libc-dev libxml2-dev ruby-json ruby-bigdecimal
 RUN gem install fluentd-ui
+
+USER fluent
