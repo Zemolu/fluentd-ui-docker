@@ -1,9 +1,5 @@
-FROM ruby:2.7.0-slim
+FROM fluentd:v1.9.1-1.0
 
-EXPOSE 9292
+RUN apk add ruby-dev make gcc libc-dev libxml2-dev ruby-json ruby-bigdecimal
 
-RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev build-essential libssl-dev libxml2-dev libxslt1-dev zlib1g-dev"
-RUN gem install -V fluentd-ui
-RUN fluentd-ui setup
-
-CMD ["fluentd-ui","start"]
+RUN gem install fluentd-ui
