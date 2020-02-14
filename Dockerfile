@@ -4,7 +4,7 @@ USER root
 
 RUN apk add ruby-dev make gcc libc-dev libxml2-dev ruby-json ruby-bigdecimal && \
     gem install fluentd-ui && \
-    fluent-gem install fluent-plugin-elasticsearch fluent-plugin-geoip fluent-plugin-ua-parser && \
+    fluent-gem install fluent-plugin-elasticsearch fluent-plugin-ua-parser && \
     apk del ruby-dev make gcc libc-dev libxml2-dev
 
 CMD [ "fluentd-ui", "start" ]
